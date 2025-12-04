@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user.login }} - Profile</title>
+</head>
+<body>
+    <h1>{{ user.name or user.login }}'s Profile</h1>
+    <img src="{{ user.avatar_url }}" width="100">
+    <p><strong>Username:</strong> {{ user.login }}</p>
+    <p><strong>Company:</strong> {{ user.company }}</p>
+    <p><strong>Blog:</strong> <a href="{{ user.blog }}" target="_blank">{{ user.blog }}</a></p>
+    <p><strong>Location:</strong> {{ user.location }}</p>
+    <p><strong>Twitter:</strong> <a href="https://twitter.com/{{ user.twitter_username }}" target="_blank">{{ user.twitter_username }}</a></p>
+    <p><strong>Public Repos:</strong> {{ user.public_repos }}</p>
+    <p><strong>Followers:</strong> {{ user.followers }}</p>
+    <p><strong>Following:</strong> {{ user.following }}</p>
+    <p><strong>Bio:</strong> {{ user.bio or "N/A" }}</p>
+    <p>
+    <strong>Organizations:</strong>
+    <a href="/github-user/{{ user.login }}/orgs">View Organizations</a>
+</p>
+
+
+    <a href="/github-users">Back to Users List</a>
+</body>
+</html>

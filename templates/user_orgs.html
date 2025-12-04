@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ username }} - Organizations</title>
+</head>
+<body>
+    <h1>{{ username }}'s Organizations</h1>
+
+    {% if orgs %}
+        {% for org in orgs %}
+        <div class="org-card">
+            <img src="{{ org.avatar_url }}" alt="{{ org.login }} logo">
+            <div class="org-info">
+                <a href="https://github.com/{{ org.login }}" target="_blank">{{ org.login }}</a>
+                {% if org.description %}
+                    <p><strong>Description:</strong> {{ org.description }}</p>
+                {% endif %}
+                {% if org.blog %}
+                    <p><strong>Website:</strong> <a href="{{ org.blog }}" target="_blank">{{ org.blog }}</a></p>
+                {% endif %}
+                {% if org.location %}
+                    <p><strong>Location:</strong> {{ org.location }}</p>
+                {% endif %}
+                <p><strong>Type:</strong> {{ org.type }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No organizations found.</p>
+    {% endif %}
+
+    <a href="/github-user/{{ username }}">Back to Profile</a>
+</body>
+</html>

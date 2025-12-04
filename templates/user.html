@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Users</title>
+</head>
+<body>
+    <h1>GitHub Users</h1>
+    <ul>
+        {% for user in users %}
+        <li>
+            <img src="{{ user.avatar_url }}" width="50" height="50">
+            <a href="{{ user.html_url }}" target="_blank">{{ user.login }}</a>
+            <a href="/github-user/{{ user.login }}">details</a>
+            <a href="{{ user.followers_url }}">Follower URL</a>
+            <a href="{{ user.following_url }}">Following URL</a>
+            <a href="{{ user.organizations_url }}">Organizations url</a>
+        </li>
+        {% endfor %}
+
+
+        {% if page > 1 %}
+            <a href="/github-users?page={{ page - 1 }}">Previous</a>
+        {% endif %}
+
+        <a href="/github-users?page={{ page + 1 }}">Next</a>
+
+
+
+    </ul>
+</body>
+</html>
