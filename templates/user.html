@@ -11,9 +11,7 @@
             <img src="{{ user.avatar_url }}" width="50" height="50">
             <a href="{{ user.html_url }}" target="_blank">{{ user.login }}</a>
             <a href="/github-user/{{ user.login }}">details</a>
-            <a href="{{ user.followers_url }}">Follower URL</a>
-            <a href="{{ user.following_url }}">Following URL</a>
-            <a href="{{ user.organizations_url }}">Organizations url</a>
+            <a href="/github-user/{{ user.login }}/orgs">Organizations url</a>
         </li>
         {% endfor %}
 

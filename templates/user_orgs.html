@@ -9,7 +9,7 @@
     {% if orgs %}
         {% for org in orgs %}
         <div class="org-card">
-            <img src="{{ org.avatar_url }}" alt="{{ org.login }} logo">
+            <img src="{{ org.avatar_url }}" height="100px" width="100px" alt="{{ org.login }} logo">
             <div class="org-info">
                 <a href="https://github.com/{{ org.login }}" target="_blank">{{ org.login }}</a>
                 {% if org.description %}
